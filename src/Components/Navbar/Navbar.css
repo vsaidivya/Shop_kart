@@ -1,0 +1,95 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 1px 3px -2px black;
+}
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.nav-logo > img{
+    transform: scale(0.65);
+}
+
+.nav-logo > p{
+    font-size: larger;
+    font-weight:600;  
+    background: linear-gradient(to bottom, rgb(255, 0, 0), rgb(0, 21, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-menu{
+    list-style-type: none;
+    display: flex;
+    gap:50px;
+}
+
+.nav-menu > li{
+    cursor: pointer;
+}
+
+.nav-menu-selected{
+    border-bottom: 2px solid brown;
+    font-size: larger;
+}
+
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+}
+
+.login-btn{
+    color: rgb(88, 88, 88);
+    margin-right:50px;
+    border: 1px solid rgb(152, 152, 152);
+    border-radius: 25px;
+    padding: 8px 30px;
+    font-size:1.05em ;
+    background-color: white;
+    cursor: pointer;
+}
+
+.login-btn:active{
+    background-color: rgb(225, 225, 225);
+    color: black;
+}
+
+.cart-img{
+    transform: scale(0.7);
+    cursor: pointer;
+}
+
+.cart-img :hover{
+    transform: scale(0.9);
+}
+
+.nav-cart-count{
+    height:12px;
+    width:12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:red;
+    border-radius: 50%;
+    font-size: x-small;
+    color: white;
+    padding: 2px;
+    margin-bottom: 20px;
+    margin-left: -10px;
+}
+
+a{
+    text-decoration: none;
+    color:black
+}
+
+a:hover , a:focus , a:active{
+    text-decoration: none;
+}
+

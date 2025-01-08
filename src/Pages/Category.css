@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    overflow-x: hidden; 
+}
+
+.banner img {
+    margin-left: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top:25px;
+    padding-bottom: 30px;
+    width:90%;
+    height: auto;
+}
+
+.sort-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 10px 5% 20px 5%; 
+}
+
+.sort-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.sort-container select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.all-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto; 
+}

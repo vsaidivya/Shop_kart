@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+}
+
+.footer{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+.footer-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    margin-bottom: 20px;
+}
+
+
+.footer-logo > p{
+    font-size:xx-large;
+    font-weight:600;  
+    background: linear-gradient(to bottom, rgb(255, 0, 0), rgb(0, 21, 128));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.list-items{
+    margin-top: 5px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    margin-bottom: 25px;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+}
+
+.social-media > img{
+    margin: 5px;
+    height:22px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+} 
