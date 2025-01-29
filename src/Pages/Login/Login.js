@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css';
 
-const SignUpForm = () => {
+const AuthForm = () => {
+  const [isSignUp, setIsSignUp] = useState(true);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,22 +20,34 @@ const SignUpForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log(isSignUp ? 'Sign Up Form submitted:' : 'Login Form submitted:', formData);
+  };
+
+  const toggleForm = () => {
+    setIsSignUp(!isSignUp);
+    setFormData({
+      name: '',
+      email: '',
+      password: '',
+      agreeToTerms: false
+    });
   };
 
   return (
-        <div className="signup-container">
+    <div className="signup-container">
       <div className="signup-form">
-        <h2>Sign Up</h2>
+        <h2>{isSignUp ? 'Sign Up' : 'Login'}</h2>
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+          {isSignUp && (
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          )}
           <input
             type="email"
             name="email"
@@ -51,28 +64,45 @@ const SignUpForm = () => {
             onChange={handleChange}
             required
           />
-          <button className='submit-btn' type="submit">Continue</button>
-          <div className="terms">
-            <input
-              type="checkbox"
-              name="agreeToTerms"
-              id="agreeToTerms"
-              checked={formData.agreeToTerms}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="agreeToTerms">
-              By continuing, I agree to the terms of use & privacy policy.
-            </label>
-          </div>
+          {isSignUp && (
+            <div className="terms">
+              <input
+                type="checkbox"
+                name="agreeToTerms"
+                id="agreeToTerms"
+                checked={formData.agreeToTerms}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="agreeToTerms">
+                By continuing, I agree to the terms of use & privacy policy.
+              </label>
+            </div>
+          )}
+          <button className="submit-btn" type="submit">
+            {isSignUp ? 'Continue' : 'Login'}
+          </button>
         </form>
         <p className="login-link">
-          Already have an account? <a>Login here</a>
+          {isSignUp ? (
+            <>
+              Already have an account?{' '}
+              <a onClick={toggleForm} style={{ cursor: 'pointer', color: '#ff0000' }}>
+                Login here
+              </a>
+            </>
+          ) : (
+            <>
+              Don't have an account?{' '}
+              <a onClick={toggleForm} style={{ cursor: 'pointer', color: '#ff0000' }}>
+                Sign up here
+              </a>
+            </>
+          )}
         </p>
       </div>
     </div>
   );
 };
 
-export default SignUpForm;
-
+export default AuthForm;
