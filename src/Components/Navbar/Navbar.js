@@ -31,8 +31,8 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="nav-login-cart">
-        <Link to="/login"><button className="login-btn">Login</button></Link>
-        <img onClick={()=>setmenu("cart")} className="cart-img" src="/Assets/cart_icon.png" alt="" />
+        <Link to="/login"><button onClick={()=>{setmenu("login")}} className="login-btn">Login</button></Link>
+        <Link to="/cart"><img onClick={()=>setmenu("cart")} className="cart-img" src="/Assets/cart_icon.png" alt="" /></Link>
         <div className="nav-cart-count">0</div>
       </div>
     </div>
