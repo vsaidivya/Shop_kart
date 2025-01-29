@@ -1,11 +1,14 @@
-import React , {useState} from 'react'
+import React , {useContext, useState} from 'react'
 import './Productdetails.css'
+import { ShopContext } from '../../Context/ProductContext';
 
 const Productdetails = (props) => {
   const [selectedSize, setSelectedSize] = useState('');
   const [mainImage, setMainImage] = useState(0);
 
-    const {currproduct} = props
+    const {currproduct} = props;
+    const {addToCart} = useContext(ShopContext);
+
     const product = {
         id: currproduct.id,
         name: currproduct.name,
@@ -105,7 +108,7 @@ const Productdetails = (props) => {
             </div>
           </div>
 
-          <button className="add-to-cart">
+          <button className="add-to-cart" onClick={()=>{addToCart(product.id)}}>
             ADD TO CART
           </button>
 
