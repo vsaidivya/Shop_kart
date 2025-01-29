@@ -1,7 +1,7 @@
 import React from 'react'
 import './Cart.css'
 import { useContext } from 'react'
-import { ShopContext } from '../../Context/ProductContext'
+import { ShopContext } from '../Context/ProductContext';
 
 const Cart = () => {
     const { all_product, cartItems, removeFromCart,getTotalCartAmount } = useContext(ShopContext);
